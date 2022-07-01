@@ -1,9 +1,10 @@
 import { TokenRequestOptions } from "../../types/authentication/getToken.types"
+import { TokenPair } from "../../types/common/token-pair.types"
 
 export const ROszTIFunctionGetToken = async (
   options: TokenRequestOptions,
   baseUrl: string
-) => {
+): Promise<TokenPair> => {
   try {
     const response = await fetch(`${baseUrl}/auth/local/signin`, {
       method: "POST",
