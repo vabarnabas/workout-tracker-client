@@ -1,23 +1,21 @@
-import * as React from 'react';
+import {
+  CurrentUserRequestOptions,
+  ROszTIFunctionGetCurrentUser,
+} from "./functions/authentication/getCurrentUser"
+import {
+  ROszTIFunctionGetToken,
+  TokenRequestOptions,
+} from "./functions/authentication/getToken"
 
-export const useMyHook = () => {
-  let [{
-    counter
-  }, setState] = React.useState<{
-    counter: number;
-  }>({
-    counter: 0
-  });
+export const useROszTIClient = (baseUrl: string | undefined) => {
+  if (baseUrl === undefined) throw new Error("Missing argument: Base URL")
 
-  React.useEffect(() => {
-    let interval = window.setInterval(() => {
-      counter++;
-      setState({counter})
-    }, 1000)
-    return () => {
-      window.clearInterval(interval);
-    };
-  }, []);
+  const getToken = (options: TokenRequestOptions) => {
+    return ROszTIFunctionGetToken(options, baseUrl || "")
+  }
+  const getCurrentUser = (options: CurrentUserRequestOptions) => {
+    return ROszTIFunctionGetCurrentUser(options, baseUrl || "")
+  }
 
-  return counter;
-};
+  return { getToken, getCurrentUser }
+}
