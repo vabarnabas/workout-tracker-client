@@ -1,12 +1,11 @@
-import { ProtectedRouteOptions } from "@roszti-types/common"
-import { User } from "@roszti-types/users"
+import { ProtectedRouteWithIdOptions, User } from "@roszti-types/users"
 
-export const ROszTIFunctionGetUsers = async (
-  options: ProtectedRouteOptions,
+export const ROszTIFunctionGetSpecificUser = async (
+  options: ProtectedRouteWithIdOptions,
   baseUrl: string
 ): Promise<User> => {
   try {
-    const response = await fetch(`${baseUrl}/users`, {
+    const response = await fetch(`${baseUrl}/users/${options.id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",

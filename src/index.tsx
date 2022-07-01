@@ -1,8 +1,14 @@
-import { ROszTIFunctionGetCurrentUser } from "./functions/authentication/getCurrentUser"
-import { ROszTIFunctionGetToken } from "./functions/authentication/getToken"
-import { ROszTIFunctionGetUsers } from "./functions/users/getUsers"
-import { TokenRequestOptions } from "./types/authentication/getToken.types"
-import { ProtectedRouteOptions } from "./types/common/protected-route.types"
+import {
+  ROszTIFunctionGetToken,
+  ROszTIFunctionGetCurrentUser,
+} from "@roszti-functions/authentication"
+import {
+  ROszTIFunctionGetSpecificUser,
+  ROszTIFunctionGetUsers,
+} from "@roszti-functions/users"
+import { ProtectedRouteOptions } from "@roszti-types/common"
+import { TokenRequestOptions } from "@roszti-types/authentication"
+import { ProtectedRouteWithIdOptions } from "@roszti-types/users"
 
 export const useROszTIClient = (baseUrl: string) => {
   if (baseUrl === undefined) throw new Error("Missing argument: Base URL")
@@ -18,6 +24,9 @@ export const useROszTIClient = (baseUrl: string) => {
   const getUsers = (options: ProtectedRouteOptions) => {
     return ROszTIFunctionGetUsers(options, baseUrl)
   }
+  const getSpecificUser = (options: ProtectedRouteWithIdOptions) => {
+    return ROszTIFunctionGetSpecificUser(options, baseUrl)
+  }
 
-  return { getToken, getCurrentUser, getUsers }
+  return { getToken, getCurrentUser, getUsers, getSpecificUser }
 }
