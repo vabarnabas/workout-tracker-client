@@ -8,7 +8,7 @@ export const ROszTIFunctionGetToken = async (
   baseUrl: string
 ) => {
   try {
-    const tokenRequest = await fetch(`${baseUrl}/login`, {
+    const tokenRequest = await fetch(`${baseUrl}/auth/local/signin`, {
       method: "POST",
       headers: {
         Accept: "application/json",

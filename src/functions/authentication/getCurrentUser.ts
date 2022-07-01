@@ -7,7 +7,7 @@ export const ROszTIFunctionGetCurrentUser = async (
   baseUrl: string
 ) => {
   try {
-    const currentUserRequest = await fetch(`${baseUrl}/current`, {
+    const currentUserRequest = await fetch(`${baseUrl}/auth/current`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -16,7 +16,7 @@ export const ROszTIFunctionGetCurrentUser = async (
       },
     })
     const data = await currentUserRequest.json()
-    return data.data
+    return data
   } catch (err) {
     throw new Error("Internal server error.")
   }
