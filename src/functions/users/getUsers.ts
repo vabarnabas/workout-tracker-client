@@ -1,11 +1,11 @@
 import { ProtectedRouteOptions } from "../../types/common/protected-route.types"
 
-export const ROszTIFunctionGetCurrentUser = async (
+export const ROszTIFunctionGetUsers = async (
   options: ProtectedRouteOptions,
   baseUrl: string
 ) => {
   try {
-    const response = await fetch(`${baseUrl}/auth/current`, {
+    const response = await fetch(`${baseUrl}/users`, {
       method: "GET",
       headers: {
         Accept: "application/json",
