@@ -8,7 +8,7 @@ export const ROszTIFunctionGetCurrentUser = async (
 ) => {
   try {
     const currentUserRequest = await fetch(`${baseUrl}/auth/current`, {
-      method: "POST",
+      method: "GET",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
