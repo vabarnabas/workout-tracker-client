@@ -20,7 +20,7 @@ export const ROszTIFunctionGetToken = async (
       }),
     })
     const data = await tokenRequest.json()
-    return data.data.token
+    return data.data
   } catch (err) {
     throw new Error("Internal server error.")
   }
