@@ -1,5 +1,4 @@
-import { TokenRequestOptions } from "@roszti-types/authentication"
-import { TokenPair } from "@roszti-types/common"
+import { TokenRequestOptions, TokenPair } from "@roszti-types"
 
 export const ROszTIFunctionGetToken = async (
   options: TokenRequestOptions,
