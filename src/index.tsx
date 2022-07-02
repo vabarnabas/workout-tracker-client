@@ -3,12 +3,14 @@ import {
   ROszTIFunctionGetCurrentUser,
 } from "@roszti-functions/authentication"
 import {
-  ROszTIFunctionGetSpecificUser,
   ROszTIFunctionGetUsers,
+  ROszTIFunctionGetSpecificUser,
 } from "@roszti-functions/users"
-import { ProtectedRouteOptions } from "@roszti-types/common"
-import { TokenRequestOptions } from "@roszti-types/authentication"
-import { ProtectedRouteWithIdOptions } from "@roszti-types/users"
+import {
+  ProtectedRouteOptions,
+  ProtectedRouteWithIdOptions,
+  TokenRequestOptions,
+} from "@roszti-types"
 
 /**
  * A multipurpose client used for making calls to the ROszTI API universal and easier.
@@ -35,9 +37,19 @@ export const useROszTIClient = (baseUrl: string) => {
     return ROszTIFunctionGetCurrentUser(options, baseUrl)
   }
   //User Management
+  /**
+   * Returns the array of users in the database.
+   * @param options - The options required for the function.
+   * @returns The array of users in the database.
+   */
   const getUsers = (options: ProtectedRouteOptions) => {
     return ROszTIFunctionGetUsers(options, baseUrl)
   }
+  /**
+   * Returns a specific user, by a provided id.
+   * @param options - The options required for the function.
+   * @returns A specific user.
+   */
   const getSpecificUser = (options: ProtectedRouteWithIdOptions) => {
     return ROszTIFunctionGetSpecificUser(options, baseUrl)
   }

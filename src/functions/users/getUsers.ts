@@ -1,5 +1,4 @@
-import { ProtectedRouteOptions } from "@roszti-types/common"
-import { User } from "@roszti-types/users"
+import { User, ProtectedRouteOptions } from "@roszti-types"
 
 export const ROszTIFunctionGetUsers = async (
   options: ProtectedRouteOptions,

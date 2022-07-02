@@ -29,8 +29,8 @@
     "noEmit": true,
     "baseUrl": "src",
     "paths": {
-      "@roszti-types/*": [
-        "./types/*"
+      "@roszti-types": [
+        "./types"
       ],
       "@roszti-functions/*": [
         "./functions/*"
