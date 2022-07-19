@@ -24,11 +24,6 @@ import { ROszTIRequest } from "services/roszti-request"
 //   }
 // }
 
-interface TokenRequest {
-  email: string
-  password: string
-}
-
 export const ROszTIFunctionGetToken = async (
   baseUrl: string,
   options: TokenRequestOptions
