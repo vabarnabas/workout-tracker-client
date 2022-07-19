@@ -19,7 +19,7 @@ export const ROszTIRequest = async (
   }
 
   if (options.body) {
-    config.body
+    config.body = options.body
   }
 
   if (options.token) {
