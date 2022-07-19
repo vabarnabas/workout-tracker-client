@@ -35,6 +35,9 @@
       "@roszti-functions/*": [
         "./functions/*"
       ],
+      "@roszti-services/*": [
+        "./services/*"
+      ],
     }
   },
   "include": [

@@ -43,7 +43,7 @@ export const useROszTIClient = (baseUrl: string) => {
    * @returns The array of users in the database.
    */
   const getUsers = (options: ProtectedRouteOptions) => {
-    return ROszTIFunctionGetUsers(options, baseUrl)
+    return ROszTIFunctionGetUsers(baseUrl, options)
   }
   /**
    * Returns a specific user, by a provided id.
@@ -51,7 +51,7 @@ export const useROszTIClient = (baseUrl: string) => {
    * @returns A specific user.
    */
   const getSpecificUser = (options: ProtectedRouteWithIdOptions) => {
-    return ROszTIFunctionGetSpecificUser(options, baseUrl)
+    return ROszTIFunctionGetSpecificUser(baseUrl, options)
   }
 
   return { getToken, getCurrentUser, getUsers, getSpecificUser }
