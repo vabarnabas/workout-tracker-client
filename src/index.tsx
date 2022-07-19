@@ -34,7 +34,7 @@ export const useROszTIClient = (baseUrl: string) => {
    * @returns The user based on the Bearer token.
    */
   const getCurrentUser = (options: ProtectedRouteOptions) => {
-    return ROszTIFunctionGetCurrentUser(options, baseUrl)
+    return ROszTIFunctionGetCurrentUser(baseUrl, options)
   }
   //User Management
   /**
