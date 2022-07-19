@@ -26,7 +26,7 @@ export const useROszTIClient = (baseUrl: string) => {
    * @returns An Access and a Refresh token.
    */
   const getToken = (options: TokenRequestOptions) => {
-    return ROszTIFunctionGetToken(options, baseUrl)
+    return ROszTIFunctionGetToken(baseUrl, options)
   }
   /**
    * Returns the current user based on the provided Bearer token.
