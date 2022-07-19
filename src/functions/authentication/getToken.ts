@@ -28,5 +28,5 @@ export const ROszTIFunctionGetToken = async (
   baseUrl: string,
   options: TokenRequestOptions
 ): Promise<TokenPair> => {
-  return await ROszTIRequest("GET", { baseUrl, body: JSON.stringify(options) })
+  return await ROszTIRequest("POST", { baseUrl, body: JSON.stringify(options) })
 }
