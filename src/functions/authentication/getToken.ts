@@ -28,5 +28,9 @@ export const ROszTIFunctionGetToken = async (
   baseUrl: string,
   options: TokenRequestOptions
 ): Promise<TokenPair> => {
-  return await ROszTIRequest("POST", { baseUrl, body: JSON.stringify(options) })
+  return await ROszTIRequest("POST", {
+    baseUrl,
+    path: "/auth/local/signin",
+    body: JSON.stringify(options),
+  })
 }

@@ -27,7 +27,12 @@ export const ROszTIRequest = async (
   }
 
   try {
-    const response = await fetch(options.baseUrl, config)
+    const response = await fetch(
+      `${options.baseUrl}${
+        options.path.charAt(0) === "/" ? options.path : `/${options.path}`
+      }`,
+      config
+    )
     const data = await response.json()
     return data
   } catch (error) {

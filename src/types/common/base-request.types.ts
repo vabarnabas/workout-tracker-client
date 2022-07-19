@@ -4,6 +4,7 @@ export type RequestHeader = [string, string]
 
 export interface RequestOptions {
   baseUrl: string
+  path: string
   token?: string
   body?: string
   headers?: RequestHeader[]
