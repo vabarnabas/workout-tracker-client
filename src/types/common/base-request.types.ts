@@ -1,6 +1,6 @@
 export type RequestMethod = "GET" | "POST" | "PATCH" | "DELETE"
 
-export type RequestHeader = [header: string, value: string]
+export type RequestHeader = [string, string]
 
 export interface RequestOptions {
   baseUrl: string
