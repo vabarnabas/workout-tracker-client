@@ -34,5 +34,3 @@ export const ROszTIRequest = async (
     throw new Error("Internal server error.")
   }
 }
-
-ROszTIRequest("GET", { baseUrl: "", headers: [["a", "b"]] })
