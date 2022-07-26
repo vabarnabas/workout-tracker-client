@@ -1,9 +1,9 @@
 import { ROszTIRequest } from "@roszti-services/roszti-request"
-import { ProtectedRouteWithIdOptions, User } from "@roszti-types"
+import { GenericId, ProtectedRouteOptions, User } from "@roszti-types"
 
 export const ROszTIFunctionGetSpecificUser = async (
   baseUrl: string,
-  options: ProtectedRouteWithIdOptions
+  options: ProtectedRouteOptions<GenericId>
 ): Promise<User> => {
   return await ROszTIRequest("GET", {
     baseUrl,

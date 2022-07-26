@@ -6,10 +6,12 @@ import {
   ROszTIFunctionGetUsers,
   ROszTIFunctionGetSpecificUser,
 } from "@roszti-functions/users"
+import { ROszTIFunctionUpdateUser } from "@roszti-functions/users/updateUser"
 import {
+  GenericId,
   ProtectedRouteOptions,
-  ProtectedRouteWithIdOptions,
   TokenRequestOptions,
+  UpdateUser,
 } from "@roszti-types"
 
 /**
@@ -50,9 +52,13 @@ export const useROszTIClient = (baseUrl: string) => {
    * @param options - The options required for the function.
    * @returns A specific user.
    */
-  const getSpecificUser = (options: ProtectedRouteWithIdOptions) => {
+  const getSpecificUser = (options: ProtectedRouteOptions<GenericId>) => {
     return ROszTIFunctionGetSpecificUser(baseUrl, options)
   }
 
-  return { getToken, getCurrentUser, getUsers, getSpecificUser }
+  const updateUser = (options: ProtectedRouteOptions<UpdateUser>) => {
+    return ROszTIFunctionUpdateUser(baseUrl, options)
+  }
+
+  return { getToken, getCurrentUser, getUsers, getSpecificUser, updateUser }
 }
