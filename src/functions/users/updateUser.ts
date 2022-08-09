@@ -11,6 +11,10 @@ export const ROszTIFunctionUpdateUser = async (
     newUser.displayName = options.displayName
   }
 
+  if (options.userName) {
+    newUser.userName = options.userName
+  }
+
   if (options.email) {
     newUser.email = options.email
   }
