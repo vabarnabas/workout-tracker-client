@@ -1,24 +1,24 @@
 import {
   ROszTIFunctionGetToken,
   ROszTIFunctionGetCurrentUser,
-} from "@roszti-functions/authentication"
+} from "@b3nch-functions/authentication"
 import {
   ROszTIFunctionGetUsers,
   ROszTIFunctionGetSpecificUser,
-} from "@roszti-functions/users"
-import { ROszTIFunctionUpdateUser } from "@roszti-functions/users/updateUser"
+} from "@b3nch-functions/users"
+import { ROszTIFunctionUpdateUser } from "@b3nch-functions/users/updateUser"
 import {
   GenericId,
   ProtectedRouteOptions,
   TokenRequestOptions,
   UpdateUser,
-} from "@roszti-types"
+} from "@b3nch-types"
 
 /**
  * A multipurpose client used for making calls to the ROszTI API universal and easier.
  * @param baseUrl - The URL needed for the requests.
  */
-export const useROszTIClient = (baseUrl: string) => {
+export const useB3nchClient = (baseUrl: string) => {
   if (baseUrl === undefined) throw new Error("Missing argument: Base URL")
 
   //Authentication
