@@ -1,13 +1,13 @@
-# @roszti/client
+# @b3nch/client
 
 >
 
-[![NPM](https://img.shields.io/npm/v/@roszti/client.svg)](https://www.npmjs.com/package/@roszti/client) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@b3nch/client.svg)](https://www.npmjs.com/package/@b3nch/client) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save @roszti/client
+npm install --save @b3nch/client
 ```
 
 ## Usage
@@ -15,10 +15,10 @@ npm install --save @roszti/client
 ```tsx
 import * as React from "react"
 
-import { useROszTIClient } from "@roszti/client"
+import { useROszTIClient } from "@b3nch/client"
 
 const Example = () => {
-  const example = useROszTIClient()
+  const example = useB3nchClient()
   return <div>{example}</div>
 }
 ```
