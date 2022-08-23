@@ -1,11 +1,11 @@
-import { ROszTIRequest } from "@roszti-services/roszti-request"
-import { User, ProtectedRouteOptions } from "@roszti-types"
+import { request } from "@b3nch-services/request"
+import { User, ProtectedRouteOptions } from "@b3nch-types"
 
 export const ROszTIFunctionGetUsers = async (
   baseUrl: string,
   options: ProtectedRouteOptions
 ): Promise<User[]> => {
-  return await ROszTIRequest("GET", {
+  return await request("GET", {
     baseUrl,
     path: "/users",
     token: options.token,

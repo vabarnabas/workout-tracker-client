@@ -1,6 +1,6 @@
-import { RequestConfig, RequestMethod, RequestOptions } from "@roszti-types"
+import { RequestConfig, RequestMethod, RequestOptions } from "@b3nch-types"
 
-export const ROszTIRequest = async (
+export const request = async (
   method: RequestMethod,
   options: RequestOptions
 ) => {

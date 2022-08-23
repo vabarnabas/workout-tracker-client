@@ -29,13 +29,13 @@
     "noEmit": true,
     "baseUrl": "src",
     "paths": {
-      "@roszti-types": [
+      "@b3nch-types": [
         "./types"
       ],
-      "@roszti-functions/*": [
+      "@b3nch-functions/*": [
         "./functions/*"
       ],
-      "@roszti-services/*": [
+      "@b3nch-services/*": [
         "./services/*"
       ],
     }

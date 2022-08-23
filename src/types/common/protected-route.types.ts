@@ -1,3 +1,3 @@
-export type ProtectedRouteOptions<T = void> = T & {
+export type ProtectedRouteOptions<T = {}> = T & {
   token: string
 }

@@ -1,21 +1,10 @@
 export interface User {
   id: string
   displayName: string
-  userName: string
-  email: string
-  code: string
+  handle: string
   password: string
-  active: boolean
-  refreshToken: string | null
 }
 
-export interface UpdateUser {
+export interface UpdateUser extends Partial<User> {
   id: string
-  displayName?: string
-  userName?: string
-  email?: string
-  code?: string
-  password?: string
-  active?: boolean
-  refreshToken?: string | null
 }

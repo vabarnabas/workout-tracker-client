@@ -1,5 +1,5 @@
-import { ROszTIRequest } from "@roszti-services/roszti-request"
-import { User, ProtectedRouteOptions, UpdateUser } from "@roszti-types"
+import { request } from "@b3nch-services/request"
+import { User, ProtectedRouteOptions, UpdateUser } from "@b3nch-types"
 
 export const ROszTIFunctionUpdateUser = async (
   baseUrl: string,
@@ -11,23 +11,15 @@ export const ROszTIFunctionUpdateUser = async (
     newUser.displayName = options.displayName
   }
 
-  if (options.userName) {
-    newUser.userName = options.userName
-  }
-
-  if (options.email) {
-    newUser.email = options.email
+  if (options.handle) {
+    newUser.handle = options.handle
   }
 
   if (options.password) {
     newUser.password = options.password
   }
 
-  if (options.code) {
-    newUser.code = options.code
-  }
-
-  return await ROszTIRequest("PATCH", {
+  return await request("PATCH", {
     baseUrl,
     path: `/users/${options.id}`,
     token: options.token,
