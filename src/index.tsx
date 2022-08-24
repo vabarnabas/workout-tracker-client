@@ -3,15 +3,26 @@ import {
   ROszTIFunctionGetCurrentUser,
 } from "@b3nch-functions/authentication"
 import {
-  ROszTIFunctionGetUsers,
-  ROszTIFunctionGetSpecificUser,
+  funcCreatePlan,
+  funcDeletePlan,
+  funcGetPlans,
+  funcGetSpecificPlan,
+  funcUpdatePlan,
+} from "@b3nch-functions/plans"
+import {
+  funcDeleteUser,
+  funcGetSpecificUser,
+  funcGetUsers,
+  funcUpdateUser,
 } from "@b3nch-functions/users"
-import { ROszTIFunctionUpdateUser } from "@b3nch-functions/users/updateUser"
 import {
   GenericId,
+  Plan,
   ProtectedRouteOptions,
   TokenRequestOptions,
+  UpdatePlan,
   UpdateUser,
+  User,
 } from "@b3nch-types"
 
 /**
@@ -45,7 +56,7 @@ export const useB3nchClient = (baseUrl: string) => {
    * @returns The array of users in the database.
    */
   const getUsers = (options: ProtectedRouteOptions) => {
-    return ROszTIFunctionGetUsers(baseUrl, options)
+    return funcGetUsers(baseUrl, options)
   }
   /**
    * Returns a specific user, by a provided id.
@@ -53,12 +64,53 @@ export const useB3nchClient = (baseUrl: string) => {
    * @returns A specific user.
    */
   const getSpecificUser = (options: ProtectedRouteOptions<GenericId>) => {
-    return ROszTIFunctionGetSpecificUser(baseUrl, options)
+    return funcGetSpecificUser(baseUrl, options)
+  }
+
+  const createUser = (options: ProtectedRouteOptions<User>) => {
+    return funcUpdateUser(baseUrl, options)
   }
 
   const updateUser = (options: ProtectedRouteOptions<UpdateUser>) => {
-    return ROszTIFunctionUpdateUser(baseUrl, options)
+    return funcUpdateUser(baseUrl, options)
   }
 
-  return { getToken, getCurrentUser, getUsers, getSpecificUser, updateUser }
+  const deleteUser = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcDeleteUser(baseUrl, options)
+  }
+
+  const getPlans = (options: ProtectedRouteOptions) => {
+    return funcGetPlans(baseUrl, options)
+  }
+
+  const getSpecificPlan = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcGetSpecificPlan(baseUrl, options)
+  }
+
+  const createPlan = (options: ProtectedRouteOptions<Plan>) => {
+    return funcCreatePlan(baseUrl, options)
+  }
+
+  const updatePlan = (options: ProtectedRouteOptions<UpdatePlan>) => {
+    return funcUpdatePlan(baseUrl, options)
+  }
+
+  const deletePlan = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcDeletePlan(baseUrl, options)
+  }
+
+  return {
+    getToken,
+    getCurrentUser,
+    getUsers,
+    getSpecificUser,
+    createUser,
+    updateUser,
+    deleteUser,
+    getPlans,
+    getSpecificPlan,
+    createPlan,
+    updatePlan,
+    deletePlan,
+  }
 }

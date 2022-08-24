@@ -1,13 +1,13 @@
 import { request } from "@b3nch-services/request"
-import { GenericId, ProtectedRouteOptions, User } from "@b3nch-types"
+import { GenericId, Plan, ProtectedRouteOptions } from "@b3nch-types"
 
-export const funcGetSpecificUser = async (
+export const funcGetSpecificPlan = async (
   baseUrl: string,
   options: ProtectedRouteOptions<GenericId>
-): Promise<User> => {
+): Promise<Plan> => {
   return await request("GET", {
     baseUrl,
-    path: `/users/${options.id}`,
+    path: `/plans/${options.id}`,
     token: options.token,
   })
 }

@@ -1,11 +1,11 @@
 import { request } from "@b3nch-services/request"
-import { User, ProtectedRouteOptions, UpdateUser } from "@b3nch-types"
+import { User, ProtectedRouteOptions } from "@b3nch-types"
 
-export const funcUpdateUser = async (
+export const funcCreateUser = async (
   baseUrl: string,
-  options: ProtectedRouteOptions<UpdateUser>
+  options: ProtectedRouteOptions<User>
 ): Promise<User> => {
-  const newUser: UpdateUser = { id: options.id }
+  const newUser: User = {} as User
 
   if (options.displayName) {
     newUser.displayName = options.displayName
@@ -19,7 +19,7 @@ export const funcUpdateUser = async (
     newUser.password = options.password
   }
 
-  return await request("PATCH", {
+  return await request("POST", {
     baseUrl,
     path: `/users/${options.id}`,
     token: options.token,
