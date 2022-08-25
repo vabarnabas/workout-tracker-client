@@ -9,6 +9,7 @@ import {
   funcGetSpecificPlan,
   funcUpdatePlan,
 } from "@b3nch-functions/plans"
+import { funcSearch } from "@b3nch-functions/search"
 import {
   funcDeleteUser,
   funcGetSpecificUser,
@@ -19,6 +20,7 @@ import {
   GenericId,
   Plan,
   ProtectedRouteOptions,
+  SearchQuery,
   TokenRequestOptions,
   UpdatePlan,
   UpdateUser,
@@ -99,6 +101,10 @@ export const useB3nchClient = (baseUrl: string) => {
     return funcDeletePlan(baseUrl, options)
   }
 
+  const search = (options: ProtectedRouteOptions<SearchQuery>) => {
+    return funcSearch(baseUrl, options)
+  }
+
   return {
     getToken,
     getCurrentUser,
@@ -112,5 +118,6 @@ export const useB3nchClient = (baseUrl: string) => {
     createPlan,
     updatePlan,
     deletePlan,
+    search,
   }
 }
