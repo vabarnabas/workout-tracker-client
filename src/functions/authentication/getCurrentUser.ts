@@ -1,7 +1,7 @@
 import { request } from "@b3nch-services/request"
 import { ProtectedRouteOptions, User } from "@b3nch-types"
 
-export const ROszTIFunctionGetCurrentUser = async (
+export const funcGetCurrentUser = async (
   baseUrl: string,
   options: ProtectedRouteOptions
 ): Promise<User> => {

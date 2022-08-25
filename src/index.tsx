@@ -1,6 +1,6 @@
 import {
-  ROszTIFunctionGetToken,
-  ROszTIFunctionGetCurrentUser,
+  funcGetToken,
+  funcGetCurrentUser,
 } from "@b3nch-functions/authentication"
 import {
   funcCreatePlan,
@@ -39,7 +39,7 @@ export const useB3nchClient = (baseUrl: string) => {
    * @returns An Access and a Refresh token.
    */
   const getToken = (options: TokenRequestOptions) => {
-    return ROszTIFunctionGetToken(baseUrl, options)
+    return funcGetToken(baseUrl, options)
   }
   /**
    * Returns the current user based on the provided Bearer token.
@@ -47,7 +47,7 @@ export const useB3nchClient = (baseUrl: string) => {
    * @returns The user based on the Bearer token.
    */
   const getCurrentUser = (options: ProtectedRouteOptions) => {
-    return ROszTIFunctionGetCurrentUser(baseUrl, options)
+    return funcGetCurrentUser(baseUrl, options)
   }
   //User Management
   /**
