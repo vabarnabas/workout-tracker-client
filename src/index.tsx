@@ -23,7 +23,16 @@ import {
   funcUpdateUser,
 } from "@b3nch-functions/users"
 import {
+  funcCreateWorkout,
+  funcDeleteWorkout,
+  funcGetSpecificWorkout,
+  funcGetWorkouts,
+  funcUpdateWorkout,
+} from "@b3nch-functions/workouts"
+import { funcConnectWorkout } from "@b3nch-functions/workouts/connectWorkout"
+import {
   Category,
+  ConnectWorkout,
   GenericId,
   Plan,
   ProtectedRouteOptions,
@@ -31,7 +40,9 @@ import {
   UpdateCategory,
   UpdatePlan,
   UpdateUser,
+  UpdateWorkout,
   User,
+  Workout,
 } from "@b3nch-types"
 
 /**
@@ -128,6 +139,32 @@ export const useClient = (baseUrl: string) => {
     return funcDeletePlan(baseUrl, options)
   }
 
+  const getWorkouts = (options: ProtectedRouteOptions) => {
+    return funcGetWorkouts(baseUrl, options)
+  }
+
+  const getSpecificWorkout = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcGetSpecificWorkout(baseUrl, options)
+  }
+
+  const createWorkout = (options: ProtectedRouteOptions<Workout>) => {
+    return funcCreateWorkout(baseUrl, options)
+  }
+
+  const updateWorkout = (options: ProtectedRouteOptions<UpdateWorkout>) => {
+    return funcUpdateWorkout(baseUrl, options)
+  }
+
+  const connectWorkout = (
+    options: ProtectedRouteOptions<GenericId & ConnectWorkout>
+  ) => {
+    return funcConnectWorkout(baseUrl, options)
+  }
+
+  const deleteWorkout = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcDeleteWorkout(baseUrl, options)
+  }
+
   return {
     getToken,
     getCurrentUser,
@@ -146,5 +183,11 @@ export const useClient = (baseUrl: string) => {
     createCategory,
     updateCategory,
     deleteCategory,
+    getWorkouts,
+    getSpecificWorkout,
+    createWorkout,
+    updateWorkout,
+    connectWorkout,
+    deleteWorkout,
   }
 }

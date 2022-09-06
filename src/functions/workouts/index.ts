@@ -1,0 +1,5 @@
+export * from "./getSpecificWorkout"
+export * from "./getWorkouts"
+export * from "./createWorkout"
+export * from "./updateWorkout"
+export * from "./deleteWorkout"
