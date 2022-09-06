@@ -3,13 +3,19 @@ import {
   funcGetCurrentUser,
 } from "@b3nch-functions/authentication"
 import {
+  funcCreateCategory,
+  funcDeleteCategory,
+  funcGetCategories,
+  funcGetSpecificCategory,
+  funcUpdateCategory,
+} from "@b3nch-functions/categories"
+import {
   funcCreatePlan,
   funcDeletePlan,
   funcGetPlans,
   funcGetSpecificPlan,
   funcUpdatePlan,
 } from "@b3nch-functions/plans"
-import { funcSearch } from "@b3nch-functions/search"
 import {
   funcDeleteUser,
   funcGetSpecificUser,
@@ -17,11 +23,12 @@ import {
   funcUpdateUser,
 } from "@b3nch-functions/users"
 import {
+  Category,
   GenericId,
   Plan,
   ProtectedRouteOptions,
-  SearchQuery,
   TokenRequestOptions,
+  UpdateCategory,
   UpdatePlan,
   UpdateUser,
   User,
@@ -81,6 +88,26 @@ export const useClient = (baseUrl: string) => {
     return funcDeleteUser(baseUrl, options)
   }
 
+  const getCategories = (options: ProtectedRouteOptions) => {
+    return funcGetCategories(baseUrl, options)
+  }
+
+  const getSpecificCategory = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcGetSpecificCategory(baseUrl, options)
+  }
+
+  const createCategory = (options: ProtectedRouteOptions<Category>) => {
+    return funcCreateCategory(baseUrl, options)
+  }
+
+  const updateCategory = (options: ProtectedRouteOptions<UpdateCategory>) => {
+    return funcUpdateCategory(baseUrl, options)
+  }
+
+  const deleteCategory = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcDeleteCategory(baseUrl, options)
+  }
+
   const getPlans = (options: ProtectedRouteOptions) => {
     return funcGetPlans(baseUrl, options)
   }
@@ -101,10 +128,6 @@ export const useClient = (baseUrl: string) => {
     return funcDeletePlan(baseUrl, options)
   }
 
-  const search = (options: ProtectedRouteOptions<SearchQuery>) => {
-    return funcSearch(baseUrl, options)
-  }
-
   return {
     getToken,
     getCurrentUser,
@@ -118,6 +141,10 @@ export const useClient = (baseUrl: string) => {
     createPlan,
     updatePlan,
     deletePlan,
-    search,
+    getCategories,
+    getSpecificCategory,
+    createCategory,
+    updateCategory,
+    deleteCategory,
   }
 }
