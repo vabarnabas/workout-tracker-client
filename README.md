@@ -1,13 +1,13 @@
-# @b3nch/client
+# workout-tracker-client
 
 >
 
-[![NPM](https://img.shields.io/npm/v/@b3nch/client.svg)](https://www.npmjs.com/package/@b3nch/client) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/workout-tracker-client.svg)](https://www.npmjs.com/package/workout-tracker-client) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save @b3nch/client
+npm install --save workout-tracker-client
 ```
 
 ## Usage
@@ -15,10 +15,10 @@ npm install --save @b3nch/client
 ```tsx
 import * as React from "react"
 
-import { useROszTIClient } from "@b3nch/client"
+import { useClient } from "workout-tracker-client"
 
 const Example = () => {
-  const example = useB3nchClient()
+  const example = useClient()
   return <div>{example}</div>
 }
 ```

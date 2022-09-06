@@ -31,7 +31,7 @@ import {
  * A multipurpose client used for making calls to the ROszTI API universal and easier.
  * @param baseUrl - The URL needed for the requests.
  */
-export const useB3nchClient = (baseUrl: string) => {
+export const useClient = (baseUrl: string) => {
   if (baseUrl === undefined) throw new Error("Missing argument: Base URL")
 
   //Authentication
