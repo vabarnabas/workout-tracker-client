@@ -11,6 +11,10 @@ export const funcCreateWorkout = async (
     newWorkout.displayName = options.displayName
   }
 
+  if (options.verified) {
+    newWorkout.verified = options.verified
+  }
+
   return await request("POST", {
     baseUrl,
     path: `/workouts`,

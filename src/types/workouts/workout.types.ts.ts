@@ -4,6 +4,7 @@ import { Plan } from "types/plans"
 export interface Workout {
   id: string
   displayName: string
+  verified: boolean
   plans: Plan[]
   categories: Category[]
 }
