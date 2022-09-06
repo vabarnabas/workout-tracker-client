@@ -11,9 +11,7 @@ export const funcUpdateWorkout = async (
     newWorkout.displayName = options.displayName
   }
 
-  if (options.verified) {
-    newWorkout.verified = options.verified
-  }
+  newWorkout.verified = options.verified || false
 
   return await request("PATCH", {
     baseUrl,
