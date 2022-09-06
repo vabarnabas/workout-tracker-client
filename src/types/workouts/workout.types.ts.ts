@@ -13,6 +13,7 @@ export interface UpdateWorkout extends Partial<Workout> {
 }
 
 export interface ConnectWorkout {
+  id: string
   planId?: string
   categoryId?: string
 }

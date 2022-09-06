@@ -155,9 +155,7 @@ export const useClient = (baseUrl: string) => {
     return funcUpdateWorkout(baseUrl, options)
   }
 
-  const connectWorkout = (
-    options: ProtectedRouteOptions<GenericId & ConnectWorkout>
-  ) => {
+  const connectWorkout = (options: ProtectedRouteOptions<ConnectWorkout>) => {
     return funcConnectWorkout(baseUrl, options)
   }
 

@@ -1,16 +1,15 @@
 import { request } from "@b3nch-services/request"
 import {
   ConnectWorkout,
-  GenericId,
   ProtectedRouteOptions,
   Workout,
 } from "@b3nch-types"
 
 export const funcConnectWorkout = async (
   baseUrl: string,
-  options: ProtectedRouteOptions<ConnectWorkout & GenericId>
+  options: ProtectedRouteOptions<ConnectWorkout>
 ): Promise<Workout> => {
-  const newWorkout: ConnectWorkout = {}
+  const newWorkout: ConnectWorkout = { id: options.id }
 
   if (options.categoryId) {
     newWorkout.categoryId = options.categoryId
