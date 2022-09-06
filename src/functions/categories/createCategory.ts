@@ -13,7 +13,7 @@ export const funcCreateCategory = async (
 
   return await request("POST", {
     baseUrl,
-    path: `/categories/${options.id}`,
+    path: `/categories`,
     token: options.token,
     body: JSON.stringify(newCategory),
   })

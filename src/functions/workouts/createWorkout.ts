@@ -13,7 +13,7 @@ export const funcCreateWorkout = async (
 
   return await request("POST", {
     baseUrl,
-    path: `/workouts/${options.id}`,
+    path: `/workouts`,
     token: options.token,
     body: JSON.stringify(newWorkout),
   })

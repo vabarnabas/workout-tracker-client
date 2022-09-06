@@ -17,7 +17,7 @@ export const funcCreatePlan = async (
 
   return await request("POST", {
     baseUrl,
-    path: `/plans/${options.id}`,
+    path: `/plans`,
     token: options.token,
     body: JSON.stringify(newPlan),
   })

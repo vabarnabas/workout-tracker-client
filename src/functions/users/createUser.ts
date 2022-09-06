@@ -21,7 +21,7 @@ export const funcCreateUser = async (
 
   return await request("POST", {
     baseUrl,
-    path: `/users/${options.id}`,
+    path: `/users`,
     token: options.token,
     body: JSON.stringify(newUser),
   })
