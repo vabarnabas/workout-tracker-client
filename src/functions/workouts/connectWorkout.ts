@@ -1,9 +1,5 @@
 import { request } from "@b3nch-services/request"
-import {
-  ConnectWorkout,
-  ProtectedRouteOptions,
-  Workout,
-} from "@b3nch-types"
+import { ConnectWorkout, ProtectedRouteOptions, Workout } from "@b3nch-types"
 
 export const funcConnectWorkout = async (
   baseUrl: string,
@@ -19,7 +15,7 @@ export const funcConnectWorkout = async (
     newWorkout.planId = options.planId
   }
 
-  return await request("PATCH", {
+  return await request("POST", {
     baseUrl,
     path: `/workouts/connect/${options.id}`,
     token: options.token,
