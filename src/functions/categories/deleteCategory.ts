@@ -1,5 +1,5 @@
-import { request } from "@b3nch-services/request"
-import { Category, ProtectedRouteOptions, GenericId } from "@b3nch-types"
+import { request } from "services/request"
+import { Category, GenericId, ProtectedRouteOptions } from "types"
 
 export const funcDeleteCategory = async (
   baseUrl: string,

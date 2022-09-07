@@ -1,5 +1,5 @@
-import { request } from "@b3nch-services/request"
-import { ProtectedRouteOptions, User } from "@b3nch-types"
+import { request } from "services/request"
+import { ProtectedRouteOptions, User } from "types"
 
 export const funcGetCurrentUser = async (
   baseUrl: string,

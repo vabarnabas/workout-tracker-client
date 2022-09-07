@@ -1,37 +1,40 @@
+import { funcGetToken, funcGetCurrentUser } from "functions/authentication"
 import {
-  funcGetToken,
-  funcGetCurrentUser,
-} from "@b3nch-functions/authentication"
-import {
-  funcCreateCategory,
-  funcDeleteCategory,
   funcGetCategories,
   funcGetSpecificCategory,
+  funcCreateCategory,
   funcUpdateCategory,
-} from "@b3nch-functions/categories"
+  funcDeleteCategory,
+} from "functions/categories"
 import {
-  funcCreatePlan,
-  funcDeletePlan,
   funcGetPlans,
   funcGetSpecificPlan,
+  funcCreatePlan,
   funcUpdatePlan,
-} from "@b3nch-functions/plans"
+  funcDeletePlan,
+} from "functions/plans"
 import {
-  funcDeleteUser,
-  funcGetSpecificUser,
   funcGetUsers,
+  funcGetSpecificUser,
   funcUpdateUser,
-} from "@b3nch-functions/users"
+  funcDeleteUser,
+} from "functions/users"
 import {
-  funcCreateWorkout,
-  funcDeleteWorkout,
-  funcGetSpecificWorkout,
   funcGetWorkouts,
+  funcGetSpecificWorkout,
+  funcCreateWorkout,
   funcUpdateWorkout,
-} from "@b3nch-functions/workouts"
-import { funcConnectWorkout } from "@b3nch-functions/workouts/connectWorkout"
+  funcDeleteWorkout,
+} from "functions/workouts"
+import { funcConnectWorkout } from "functions/workouts/connectWorkout"
 import {
   Category,
+  ClientCreateFunction,
+  ClientDeleteFunction,
+  ClientGetFunction,
+  ClientGetSpecificFunction,
+  ClientGetTokenFunction,
+  ClientUpdateFunction,
   ConnectWorkout,
   GenericId,
   Plan,
@@ -43,7 +46,7 @@ import {
   UpdateWorkout,
   User,
   Workout,
-} from "@b3nch-types"
+} from "types"
 
 /**
  * A multipurpose client used for making calls to the ROszTI API universal and easier.
@@ -58,7 +61,7 @@ export const useClient = (baseUrl: string) => {
    * @param options - The options required for the function.
    * @returns An Access and a Refresh token.
    */
-  const getToken = (options: TokenRequestOptions) => {
+  const getToken: ClientGetTokenFunction = (options: TokenRequestOptions) => {
     return funcGetToken(baseUrl, options)
   }
   /**
@@ -75,7 +78,9 @@ export const useClient = (baseUrl: string) => {
    * @param options - The options required for the function.
    * @returns The array of users in the database.
    */
-  const getUsers = (options: ProtectedRouteOptions) => {
+  const getUsers: ClientGetFunction<User> = (
+    options: ProtectedRouteOptions
+  ) => {
     return funcGetUsers(baseUrl, options)
   }
   /**
@@ -83,19 +88,27 @@ export const useClient = (baseUrl: string) => {
    * @param options - The options required for the function.
    * @returns A specific user.
    */
-  const getSpecificUser = (options: ProtectedRouteOptions<GenericId>) => {
+  const getSpecificUser: ClientGetSpecificFunction<User> = (
+    options: ProtectedRouteOptions<GenericId>
+  ) => {
     return funcGetSpecificUser(baseUrl, options)
   }
 
-  const createUser = (options: ProtectedRouteOptions<User>) => {
+  const createUser: ClientCreateFunction<User> = (
+    options: ProtectedRouteOptions<User>
+  ) => {
     return funcUpdateUser(baseUrl, options)
   }
 
-  const updateUser = (options: ProtectedRouteOptions<UpdateUser>) => {
+  const updateUser: ClientUpdateFunction<User, UpdateUser> = (
+    options: ProtectedRouteOptions<UpdateUser>
+  ) => {
     return funcUpdateUser(baseUrl, options)
   }
 
-  const deleteUser = (options: ProtectedRouteOptions<GenericId>) => {
+  const deleteUser: ClientDeleteFunction<User> = (
+    options: ProtectedRouteOptions<GenericId>
+  ) => {
     return funcDeleteUser(baseUrl, options)
   }
 

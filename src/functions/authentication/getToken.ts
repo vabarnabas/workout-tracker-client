@@ -1,7 +1,7 @@
-import { request } from "@b3nch-services/request"
-import { TokenPair, TokenRequestOptions } from "@b3nch-types"
+import { request } from "services/request"
+import { BaseGetTokenFunction, TokenPair, TokenRequestOptions } from "types"
 
-export const funcGetToken = async (
+export const funcGetToken: BaseGetTokenFunction = async (
   baseUrl: string,
   options: TokenRequestOptions
 ): Promise<TokenPair> => {

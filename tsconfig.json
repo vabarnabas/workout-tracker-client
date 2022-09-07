@@ -33,13 +33,13 @@
     "noEmit": true,
     "baseUrl": "src",
     "paths": {
-      "@b3nch-types": [
+      "types": [
         "./types"
       ],
-      "@b3nch-functions/*": [
+      "functions/*": [
         "./functions/*"
       ],
-      "@b3nch-services/*": [
+      "services/*": [
         "./services/*"
       ],
     }

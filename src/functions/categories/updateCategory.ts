@@ -1,5 +1,5 @@
-import { request } from "@b3nch-services/request"
-import { Category, ProtectedRouteOptions, UpdateCategory } from "@b3nch-types"
+import { request } from "services/request"
+import { ProtectedRouteOptions, UpdateCategory, Category } from "types"
 
 export const funcUpdateCategory = async (
   baseUrl: string,

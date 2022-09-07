@@ -1,7 +1,7 @@
-import { request } from "@b3nch-services/request"
-import { User, ProtectedRouteOptions } from "@b3nch-types"
+import { request } from "services/request"
+import { BaseGetFunction, ProtectedRouteOptions, User } from "types"
 
-export const funcGetUsers = async (
+export const funcGetUsers: BaseGetFunction<User> = async (
   baseUrl: string,
   options: ProtectedRouteOptions
 ): Promise<User[]> => {

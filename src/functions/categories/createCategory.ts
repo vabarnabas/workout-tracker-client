@@ -1,5 +1,5 @@
-import { request } from "@b3nch-services/request"
-import { ProtectedRouteOptions, Category } from "@b3nch-types"
+import { request } from "services/request"
+import { ProtectedRouteOptions, Category } from "types"
 
 export const funcCreateCategory = async (
   baseUrl: string,

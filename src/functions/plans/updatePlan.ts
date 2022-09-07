@@ -1,5 +1,5 @@
-import { request } from "@b3nch-services/request"
-import { Plan, ProtectedRouteOptions, UpdatePlan } from "@b3nch-types"
+import { request } from "services/request"
+import { ProtectedRouteOptions, UpdatePlan, Plan } from "types"
 
 export const funcUpdatePlan = async (
   baseUrl: string,

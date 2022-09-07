@@ -1,7 +1,12 @@
-import { request } from "@b3nch-services/request"
-import { User, ProtectedRouteOptions, GenericId } from "@b3nch-types"
+import { request } from "services/request"
+import {
+  ProtectedRouteOptions,
+  GenericId,
+  User,
+  BaseDeleteFunction,
+} from "types"
 
-export const funcDeleteUser = async (
+export const funcDeleteUser: BaseDeleteFunction<User> = async (
   baseUrl: string,
   options: ProtectedRouteOptions<GenericId>
 ): Promise<User> => {
