@@ -11,6 +11,10 @@ export const funcUpdatePlan = async (
     newPlan.displayName = options.displayName
   }
 
+  if (options.description) {
+    newPlan.description = options.description
+  }
+
   if (options.createdBy) {
     newPlan.createdBy = options.createdBy
   }

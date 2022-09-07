@@ -4,6 +4,7 @@ import { Workout } from "types/workouts"
 export interface Plan {
   id: string
   displayName: string
+  description: string
   createdBy: string
   user?: User
   workouts: Workout[]
