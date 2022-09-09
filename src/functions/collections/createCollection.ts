@@ -1,9 +1,13 @@
 import { request } from "../../services/request"
-import { Collection, ProtectedRouteOptions } from "../../types"
+import {
+  Collection,
+  CreateCollection,
+  ProtectedRouteOptions,
+} from "../../types"
 
 export const funcCreateCollection = async (
   baseUrl: string,
-  options: ProtectedRouteOptions<Collection>
+  options: ProtectedRouteOptions<CreateCollection>
 ): Promise<Collection> => {
   const newCollection: Collection = {} as Collection
 

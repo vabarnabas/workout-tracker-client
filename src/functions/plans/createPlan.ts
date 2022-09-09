@@ -1,9 +1,9 @@
 import { request } from "../../services/request"
-import { Plan, ProtectedRouteOptions } from "../../types"
+import { CreatePlan, Plan, ProtectedRouteOptions } from "../../types"
 
 export const funcCreatePlan = async (
   baseUrl: string,
-  options: ProtectedRouteOptions<Plan>
+  options: ProtectedRouteOptions<CreatePlan>
 ): Promise<Plan> => {
   const newPlan: Plan = {} as Plan
 

@@ -1,9 +1,9 @@
 import { request } from "../../services/request"
-import { ProtectedRouteOptions, Category } from "../../types"
+import { ProtectedRouteOptions, Category, CreateCategory } from "../../types"
 
 export const funcCreateCategory = async (
   baseUrl: string,
-  options: ProtectedRouteOptions<Category>
+  options: ProtectedRouteOptions<CreateCategory>
 ): Promise<Category> => {
   const newCategory: Category = {} as Category
 

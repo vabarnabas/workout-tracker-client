@@ -11,9 +11,9 @@ export type BaseGetSpecificFunction<T> = (
   options: ProtectedRouteOptions<GenericId>
 ) => Promise<T>
 
-export type BaseCreateFunction<T> = (
+export type BaseCreateFunction<T, U> = (
   baseUrl: string,
-  options: ProtectedRouteOptions<T>
+  options: ProtectedRouteOptions<U>
 ) => Promise<T>
 
 export type BaseUpdateFunction<T, U> = (
@@ -39,8 +39,8 @@ export type ClientGetSpecificFunction<T> = (
   options: ProtectedRouteOptions<GenericId>
 ) => Promise<T>
 
-export type ClientCreateFunction<T> = (
-  options: ProtectedRouteOptions<T>
+export type ClientCreateFunction<T, U> = (
+  options: ProtectedRouteOptions<U>
 ) => Promise<T>
 
 export type ClientUpdateFunction<T, U> = (

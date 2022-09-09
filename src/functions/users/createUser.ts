@@ -1,9 +1,14 @@
 import { request } from "../../services/request"
-import { BaseCreateFunction, ProtectedRouteOptions, User } from "../../types"
+import {
+  BaseCreateFunction,
+  CreateUser,
+  ProtectedRouteOptions,
+  User,
+} from "../../types"
 
-export const funcCreateUser: BaseCreateFunction<User> = async (
+export const funcCreateUser: BaseCreateFunction<User, CreateUser> = async (
   baseUrl: string,
-  options: ProtectedRouteOptions<User>
+  options: ProtectedRouteOptions<CreateUser>
 ): Promise<User> => {
   const newUser: User = {} as User
 

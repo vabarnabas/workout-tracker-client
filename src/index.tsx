@@ -4,16 +4,17 @@ import {
   User,
   GenericId,
   UpdateUser,
-  Category,
   UpdateCategory,
-  Plan,
   UpdatePlan,
-  Workout,
   UpdateWorkout,
   ConnectWorkout,
-  Collection,
   UpdateCollection,
   ConnectCollection,
+  CreateUser,
+  CreateCategory,
+  CreatePlan,
+  CreateWorkout,
+  CreateCollection,
 } from "./types"
 import {
   ClientCreateFunction,
@@ -52,6 +53,7 @@ import {
   funcUpdateCollection,
   funcConnectCollection,
   funcDeleteCollection,
+  funcCreateUser,
 } from "./functions"
 
 /**
@@ -100,10 +102,10 @@ export const useClient = (baseUrl: string) => {
     return funcGetSpecificUser(baseUrl, options)
   }
 
-  const createUser: ClientCreateFunction<User> = (
-    options: ProtectedRouteOptions<User>
+  const createUser: ClientCreateFunction<User, CreateUser> = (
+    options: ProtectedRouteOptions<CreateUser>
   ) => {
-    return funcUpdateUser(baseUrl, options)
+    return funcCreateUser(baseUrl, options)
   }
 
   const updateUser: ClientUpdateFunction<User, UpdateUser> = (
@@ -126,7 +128,7 @@ export const useClient = (baseUrl: string) => {
     return funcGetSpecificCategory(baseUrl, options)
   }
 
-  const createCategory = (options: ProtectedRouteOptions<Category>) => {
+  const createCategory = (options: ProtectedRouteOptions<CreateCategory>) => {
     return funcCreateCategory(baseUrl, options)
   }
 
@@ -146,7 +148,7 @@ export const useClient = (baseUrl: string) => {
     return funcGetSpecificPlan(baseUrl, options)
   }
 
-  const createPlan = (options: ProtectedRouteOptions<Plan>) => {
+  const createPlan = (options: ProtectedRouteOptions<CreatePlan>) => {
     return funcCreatePlan(baseUrl, options)
   }
 
@@ -166,7 +168,7 @@ export const useClient = (baseUrl: string) => {
     return funcGetSpecificWorkout(baseUrl, options)
   }
 
-  const createWorkout = (options: ProtectedRouteOptions<Workout>) => {
+  const createWorkout = (options: ProtectedRouteOptions<CreateWorkout>) => {
     return funcCreateWorkout(baseUrl, options)
   }
 
@@ -190,7 +192,9 @@ export const useClient = (baseUrl: string) => {
     return funcGetSpecificCollection(baseUrl, options)
   }
 
-  const createCollection = (options: ProtectedRouteOptions<Collection>) => {
+  const createCollection = (
+    options: ProtectedRouteOptions<CreateCollection>
+  ) => {
     return funcCreateCollection(baseUrl, options)
   }
 

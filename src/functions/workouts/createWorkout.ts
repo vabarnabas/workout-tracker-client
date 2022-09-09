@@ -1,9 +1,9 @@
 import { request } from "../../services/request"
-import { ProtectedRouteOptions, Workout } from "../../types"
+import { CreateWorkout, ProtectedRouteOptions, Workout } from "../../types"
 
 export const funcCreateWorkout = async (
   baseUrl: string,
-  options: ProtectedRouteOptions<Workout>
+  options: ProtectedRouteOptions<CreateWorkout>
 ): Promise<Workout> => {
   const newWorkout: Workout = {} as Workout
 
