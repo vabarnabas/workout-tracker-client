@@ -7,6 +7,14 @@ import {
   funcDeleteCategory,
 } from "functions/categories"
 import {
+  funcCreateCollection,
+  funcDeleteCollection,
+  funcGetCollections,
+  funcGetSpecificCollection,
+  funcUpdateCollection,
+} from "functions/collections"
+import { funcConnectCollection } from "functions/collections/connectCollection"
+import {
   funcGetPlans,
   funcGetSpecificPlan,
   funcCreatePlan,
@@ -47,6 +55,11 @@ import {
   User,
   Workout,
 } from "types"
+import {
+  Collection,
+  ConnectCollection,
+  UpdateCollection,
+} from "types/collections"
 
 /**
  * A multipurpose client used for making calls to the ROszTI API universal and easier.
@@ -176,6 +189,34 @@ export const useClient = (baseUrl: string) => {
     return funcDeleteWorkout(baseUrl, options)
   }
 
+  const getCollections = (options: ProtectedRouteOptions) => {
+    return funcGetCollections(baseUrl, options)
+  }
+
+  const getSpecificCollection = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcGetSpecificCollection(baseUrl, options)
+  }
+
+  const createCollection = (options: ProtectedRouteOptions<Collection>) => {
+    return funcCreateCollection(baseUrl, options)
+  }
+
+  const updateCollection = (
+    options: ProtectedRouteOptions<UpdateCollection>
+  ) => {
+    return funcUpdateCollection(baseUrl, options)
+  }
+
+  const connectCollection = (
+    options: ProtectedRouteOptions<ConnectCollection>
+  ) => {
+    return funcConnectCollection(baseUrl, options)
+  }
+
+  const deleteCollection = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcDeleteCollection(baseUrl, options)
+  }
+
   return {
     getToken,
     getCurrentUser,
@@ -200,5 +241,11 @@ export const useClient = (baseUrl: string) => {
     updateWorkout,
     connectWorkout,
     deleteWorkout,
+    getCollections,
+    getSpecificCollection,
+    createCollection,
+    connectCollection,
+    updateCollection,
+    deleteCollection,
   }
 }
