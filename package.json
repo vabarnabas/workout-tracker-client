@@ -22,7 +22,10 @@
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "module-alias": "^2.2.2",
+    "ts-node": "^10.9.1"
+  },
   "peerDependencies": {
     "react": "^16.9.0"
   },

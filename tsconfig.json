@@ -31,18 +31,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "baseUrl": "src",
-    "paths": {
-      "types": [
-        "./types"
-      ],
-      "functions/*": [
-        "./functions/*"
-      ],
-      "services/*": [
-        "./services/*"
-      ],
-    }
+    "baseUrl": "./src",
   },
   "include": [
     "src"

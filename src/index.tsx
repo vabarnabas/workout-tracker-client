@@ -1,65 +1,56 @@
-import { funcGetToken, funcGetCurrentUser } from "functions/authentication"
 import {
-  funcGetCategories,
-  funcGetSpecificCategory,
-  funcCreateCategory,
-  funcUpdateCategory,
-  funcDeleteCategory,
-} from "functions/categories"
-import {
-  funcCreateCollection,
-  funcDeleteCollection,
-  funcGetCollections,
-  funcGetSpecificCollection,
-  funcUpdateCollection,
-} from "functions/collections"
-import { funcConnectCollection } from "functions/collections/connectCollection"
-import {
-  funcGetPlans,
-  funcGetSpecificPlan,
-  funcCreatePlan,
-  funcUpdatePlan,
-  funcDeletePlan,
-} from "functions/plans"
-import {
-  funcGetUsers,
-  funcGetSpecificUser,
-  funcUpdateUser,
-  funcDeleteUser,
-} from "functions/users"
-import {
-  funcGetWorkouts,
-  funcGetSpecificWorkout,
-  funcCreateWorkout,
-  funcUpdateWorkout,
-  funcDeleteWorkout,
-} from "functions/workouts"
-import { funcConnectWorkout } from "functions/workouts/connectWorkout"
-import {
+  TokenRequestOptions,
+  ProtectedRouteOptions,
+  User,
+  GenericId,
+  UpdateUser,
   Category,
+  UpdateCategory,
+  Plan,
+  UpdatePlan,
+  Workout,
+  UpdateWorkout,
+  ConnectWorkout,
+  Collection,
+  UpdateCollection,
+  ConnectCollection,
   ClientCreateFunction,
   ClientDeleteFunction,
   ClientGetFunction,
   ClientGetSpecificFunction,
   ClientGetTokenFunction,
   ClientUpdateFunction,
-  ConnectWorkout,
-  GenericId,
-  Plan,
-  ProtectedRouteOptions,
-  TokenRequestOptions,
-  UpdateCategory,
-  UpdatePlan,
-  UpdateUser,
-  UpdateWorkout,
-  User,
-  Workout,
 } from "types"
 import {
-  Collection,
-  ConnectCollection,
-  UpdateCollection,
-} from "types/collections"
+  funcGetToken,
+  funcGetCurrentUser,
+  funcGetUsers,
+  funcGetSpecificUser,
+  funcUpdateUser,
+  funcDeleteUser,
+  funcGetCategories,
+  funcGetSpecificCategory,
+  funcCreateCategory,
+  funcUpdateCategory,
+  funcDeleteCategory,
+  funcGetPlans,
+  funcGetSpecificPlan,
+  funcCreatePlan,
+  funcUpdatePlan,
+  funcDeletePlan,
+  funcGetWorkouts,
+  funcGetSpecificWorkout,
+  funcCreateWorkout,
+  funcUpdateWorkout,
+  funcConnectWorkout,
+  funcDeleteWorkout,
+  funcGetCollections,
+  funcGetSpecificCollection,
+  funcCreateCollection,
+  funcUpdateCollection,
+  funcConnectCollection,
+  funcDeleteCollection,
+} from "./functions"
 
 /**
  * A multipurpose client used for making calls to the ROszTI API universal and easier.
