@@ -15,6 +15,8 @@ import {
   CreatePlan,
   CreateWorkout,
   CreateCollection,
+  CreatePost,
+  UpdatePost,
 } from "./types"
 import {
   ClientCreateFunction,
@@ -55,6 +57,11 @@ import {
   funcDeleteCollection,
   funcCreateUser,
 } from "./functions"
+import {
+  funcCreatePost,
+  funcGetPosts,
+  funcGetSpecificPost,
+} from "./functions/posts"
 
 /**
  * A multipurpose client used for making calls to the ROszTI API universal and easier.
@@ -214,6 +221,26 @@ export const useClient = (baseUrl: string) => {
     return funcDeleteCollection(baseUrl, options)
   }
 
+  const getPosts = (options: ProtectedRouteOptions) => {
+    return funcGetPosts(baseUrl, options)
+  }
+
+  const getSpecificPost = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcGetSpecificPost(baseUrl, options)
+  }
+
+  const createPost = (options: ProtectedRouteOptions<CreatePost>) => {
+    return funcCreatePost(baseUrl, options)
+  }
+
+  const updatePost = (options: ProtectedRouteOptions<UpdatePost>) => {
+    return funcUpdateCollection(baseUrl, options)
+  }
+
+  const deletePost = (options: ProtectedRouteOptions<GenericId>) => {
+    return funcDeleteCollection(baseUrl, options)
+  }
+
   return {
     getToken,
     getCurrentUser,
@@ -244,5 +271,10 @@ export const useClient = (baseUrl: string) => {
     connectCollection,
     updateCollection,
     deleteCollection,
+    getPosts,
+    getSpecificPost,
+    createPost,
+    updatePost,
+    deletePost,
   }
 }
