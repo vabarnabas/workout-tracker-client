@@ -59,8 +59,10 @@ import {
 } from "./functions"
 import {
   funcCreatePost,
+  funcDeletePost,
   funcGetPosts,
   funcGetSpecificPost,
+  funcUpdatePost,
 } from "./functions/posts"
 
 /**
@@ -234,11 +236,11 @@ export const useClient = (baseUrl: string) => {
   }
 
   const updatePost = (options: ProtectedRouteOptions<UpdatePost>) => {
-    return funcUpdateCollection(baseUrl, options)
+    return funcUpdatePost(baseUrl, options)
   }
 
   const deletePost = (options: ProtectedRouteOptions<GenericId>) => {
-    return funcDeleteCollection(baseUrl, options)
+    return funcDeletePost(baseUrl, options)
   }
 
   return {
