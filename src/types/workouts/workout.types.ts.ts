@@ -1,5 +1,5 @@
-import { Category } from "types/categories"
-import { Plan } from "types/plans"
+import { Category } from "../categories"
+import { Plan } from "../plans"
 
 export interface Workout {
   id: string

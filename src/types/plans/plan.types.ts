@@ -1,5 +1,5 @@
-import { User } from "types/users"
-import { Workout } from "types/workouts"
+import { User } from "../users"
+import { Workout } from "../workouts"
 
 export interface Plan {
   id: string

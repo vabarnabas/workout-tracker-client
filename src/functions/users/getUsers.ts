@@ -1,5 +1,5 @@
-import { request } from "services/request"
-import { BaseGetFunction, ProtectedRouteOptions, User } from "types"
+import { request } from "../../services/request"
+import { BaseGetFunction, ProtectedRouteOptions, User } from "../../types"
 
 export const funcGetUsers: BaseGetFunction<User> = async (
   baseUrl: string,

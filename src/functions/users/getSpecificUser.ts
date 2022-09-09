@@ -1,10 +1,10 @@
-import { request } from "services/request"
+import { request } from "../../services/request"
 import {
   ProtectedRouteOptions,
   GenericId,
   User,
   BaseGetSpecificFunction,
-} from "types"
+} from "../../types"
 
 export const funcGetSpecificUser: BaseGetSpecificFunction<User> = async (
   baseUrl: string,

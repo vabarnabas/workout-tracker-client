@@ -1,5 +1,5 @@
-import { request } from "services/request"
-import { ProtectedRouteOptions, GenericId, Workout } from "types"
+import { request } from "../../services/request"
+import { ProtectedRouteOptions, GenericId, Workout } from "../../types"
 
 export const funcDeleteWorkout = async (
   baseUrl: string,

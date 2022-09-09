@@ -1,4 +1,4 @@
-import { RequestConfig, RequestMethod, RequestOptions } from "types"
+import { RequestConfig, RequestMethod, RequestOptions } from "../../types"
 
 export const request = async (
   method: RequestMethod,

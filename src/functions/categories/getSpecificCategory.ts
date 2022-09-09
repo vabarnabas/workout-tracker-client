@@ -1,5 +1,5 @@
-import { request } from "services/request"
-import { ProtectedRouteOptions, GenericId, Category } from "types"
+import { request } from "../../services/request"
+import { ProtectedRouteOptions, GenericId, Category } from "../../types"
 
 export const funcGetSpecificCategory = async (
   baseUrl: string,

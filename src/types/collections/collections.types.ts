@@ -1,5 +1,5 @@
-import { Plan } from "types/plans"
-import { User } from "types/users"
+import { Plan } from "../plans"
+import { User } from "../users"
 
 export interface Collection {
   id: string

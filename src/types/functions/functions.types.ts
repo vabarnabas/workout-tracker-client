@@ -1,5 +1,5 @@
-import { TokenRequestOptions } from "types/authentication"
-import { GenericId, ProtectedRouteOptions, TokenPair } from "types/common"
+import { TokenRequestOptions } from "../authentication"
+import { GenericId, ProtectedRouteOptions, TokenPair } from "../common"
 
 export type BaseGetFunction<T> = (
   baseUrl: string,

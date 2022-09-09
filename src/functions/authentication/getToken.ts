@@ -1,5 +1,9 @@
-import { request } from "services/request"
-import { BaseGetTokenFunction, TokenPair, TokenRequestOptions } from "types"
+import { request } from "../../services/request"
+import {
+  BaseGetTokenFunction,
+  TokenPair,
+  TokenRequestOptions,
+} from "../../types"
 
 export const funcGetToken: BaseGetTokenFunction = async (
   baseUrl: string,

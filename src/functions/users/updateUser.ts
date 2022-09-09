@@ -1,10 +1,10 @@
-import { request } from "services/request"
+import { request } from "../../services/request"
 import {
   BaseUpdateFunction,
   ProtectedRouteOptions,
   UpdateUser,
   User,
-} from "types"
+} from "../../types"
 
 export const funcUpdateUser: BaseUpdateFunction<User, UpdateUser> = async (
   baseUrl: string,

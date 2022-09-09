@@ -1,5 +1,5 @@
-import { request } from "services/request"
-import { ProtectedRouteOptions, ConnectWorkout, Workout } from "types"
+import { request } from "../../services/request"
+import { ProtectedRouteOptions, ConnectWorkout, Workout } from "../../types"
 
 export const funcConnectWorkout = async (
   baseUrl: string,

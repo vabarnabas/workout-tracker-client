@@ -1,10 +1,10 @@
-import { request } from "services/request"
+import { request } from "../../services/request"
 import {
   ProtectedRouteOptions,
   GenericId,
   User,
   BaseDeleteFunction,
-} from "types"
+} from "../../types"
 
 export const funcDeleteUser: BaseDeleteFunction<User> = async (
   baseUrl: string,

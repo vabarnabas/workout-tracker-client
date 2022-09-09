@@ -31,7 +31,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "baseUrl": "./src",
   },
   "include": [
     "src"

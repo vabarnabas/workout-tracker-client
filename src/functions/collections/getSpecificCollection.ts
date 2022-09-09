@@ -1,6 +1,5 @@
-import { request } from "services/request"
-import { ProtectedRouteOptions, GenericId } from "types"
-import { Collection } from "types/collections"
+import { request } from "../../services/request"
+import { ProtectedRouteOptions, GenericId, Collection } from "../../types"
 
 export const funcGetSpecificCollection = async (
   baseUrl: string,

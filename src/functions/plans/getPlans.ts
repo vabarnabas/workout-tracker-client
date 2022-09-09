@@ -1,5 +1,5 @@
-import { request } from "services/request"
-import { Plan, ProtectedRouteOptions } from "types"
+import { request } from "../../services/request"
+import { Plan, ProtectedRouteOptions } from "../../types"
 
 export const funcGetPlans = async (
   baseUrl: string,

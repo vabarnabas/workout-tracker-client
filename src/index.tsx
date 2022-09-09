@@ -14,13 +14,15 @@ import {
   Collection,
   UpdateCollection,
   ConnectCollection,
+} from "./types"
+import {
   ClientCreateFunction,
   ClientDeleteFunction,
   ClientGetFunction,
   ClientGetSpecificFunction,
   ClientGetTokenFunction,
   ClientUpdateFunction,
-} from "types"
+} from "./types/functions/functions.types"
 import {
   funcGetToken,
   funcGetCurrentUser,
